@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+/* comandos feitos para resetar as configurações do explorer */
+
+body {
+    background-image: url(./assents/bg.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+        /* a cor do backgroud no figma é encontrada na "lading" */
+}
+
+body * {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 160%;
+}
+
+header {
+    margin-top: 32px;
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #6BCAE2, #FFD166, #F15BB5);
+    
+    border-radius: 50%;
+        /* Representa a borda da caixa de fora */
+    
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+        /* representa a imagem */
+}
+
+main {
+    max-width: 520px;
+    width: 90%;
+    margin: 32px auto;
+        /* ao colocar uma borda na primeira main, a borda ficará mais a direita e, com esse comando, ela centralizará;
+        o primeiro valor significa as bordas de cima/baixo, enquanto o segundo, as laterais */
+    display: grid;
+    gap: 24px;
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #6BCAE2, #FFD166, #F15BB5);
+    padding-top: 4px;
+    border-radius: 8px;
+}
+
+section div {
+    background-color: #262629;
+    padding: 32px;
+    padding-top: 24px;
+        /* coloquei todos os espaçamentos como 32, porem depois disso alterei só o do topo */
+    border-radius: 20px;
+}
+
+/* section h2 {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 160%;
+    Comentário, pois o que foi escrito já estava sendo aplicado 
+} */
+
+section p {
+    letter-spacing: -0.18px;
+    color: #C1C1C1;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+        /* deixar flex e wrap para colocar uma ao lado da outra e, quando preencher, jogar para baixo o conteúdo que não cabe na linha */
+    gap: 16px;
+    margin-top: 24px;
+}
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.animes-list img {
+    width: 100px;
+    border-radius: 8px;
+    border: 1px solid #6BCAE2;
+}
+
+.filmes-list img {
+    width: 100px;
+    border-radius: 8px;
+    border: 1px solid #FFD166;
+}
+
+.series-list img {
+    width: 100px;
+    border-radius: 8px;
+    border: 1px solid #F15BB5;
+}
+
+.social-list img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #6BCAE2;
+}
+
+   /* somente após organizar as listas de imagem que tudo ficará bem centralizado */
+
+/* Animation */
+
+header div {
+    animation: fromTop 1.0s .5s backwards;
+        /* o primeiro é o tempo da animação e o segundo é o delay (que pode ser posto separado também)
+        e o backwards, aplica as propriedades de baixo juntamente com essa */
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: fromBottom .5s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+main section:nth-child(4) {
+    animation-delay: .9s;
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
